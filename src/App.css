@@ -18,6 +18,8 @@
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@400;500&family=Roboto:wght@500&display=swap');
+
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -42,3 +44,26 @@
     transform: translateY(0px);
   }
 }
+
+
+.svg{
+    border: 2px solid black;
+}
+
+
+.light-blue{
+  color: #0296E5
+}
+
+.dark-blue{
+  color: #242A32
+}
+
+.light-gray{
+  color: #67686D
+}
+
+
+
+
+

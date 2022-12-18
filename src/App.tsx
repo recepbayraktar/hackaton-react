@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
 import { useAppDispatch, useAppSelector } from './app/hooks';
-import { getAPI } from './features/getAPI';
 import { useSelector } from 'react-redux';
 import {
   createBrowserRouter,
@@ -10,12 +9,15 @@ import {
   Link,
 } from "react-router-dom";
 import Home from './pages/Home';
+import Loading from './pages/Loading';
+import Search from './pages/Search';
+import MovieDetail from './pages/MovieDetail';
 
 function App() {
-  const dispatch = useAppDispatch()
+ 
  
   useEffect(() => {
-    dispatch(getAPI())
+   
   }, [])
 
   const router = createBrowserRouter([
@@ -26,9 +28,14 @@ function App() {
       ),
     },
     {
-      path: "about",
-      element: <div>About</div>,
+      path: "search",
+      element: <Search />,
     },
+    {
+      path: "movie/:id",
+      element: <MovieDetail />,
+    },
+    
   ]);
   return (
     <RouterProvider router={router} />

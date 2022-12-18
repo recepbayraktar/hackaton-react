@@ -1,12 +1,13 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios"
 
-export const getAPI = createAsyncThunk(
-    "post/getPosts",
-    async (args,thunkAPI) => {
+export const getMovieDetails = createAsyncThunk(
+    "Movies/getMovieDetails",
+    async (url:string,thunkAPI) => {
         try {
-            const response = await axios.get("https://dummyjson.com/posts");
-            console.log(response.data, "response")
+           
+            const response = await axios.get(url);
+        
             return response.data;
         } catch (error: any ) {
             return thunkAPI.rejectWithValue({ error: error.message });
